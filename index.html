@@ -4,13 +4,42 @@
         <title> custom tag with shadow dom</title>
         <meta charset="utf-8">
         <link href="./dist/css/customElement.css" rel="stylesheet" type="text/css"/>
+        <style>
+            .wrapper{
+                width: 500px;
+                height: 500px;
+                border: 1px solid red;
+            }
+        </style>
     </head>
 
     <body>
+        
+    <div class="wrapper">
+        <u4bi-card [name]="유명재" [age]="13" [level]="85" [exp]="38" [team]="멋진팀" [img]="https://avatars1.githubusercontent.com/u/21367010?v=3&s=460" [url]="https://github.com/u4bi"></u4bi-card>
+        <u4bi-card [name]="유명재" [age]="15" [level]="35" [exp]="78" [team]="나쁜팀" [img]="https://avatars1.githubusercontent.com/u/24691195?v=3&s=200" [url]="https://github.com/u4bi-dev"></u4bi-card>
+    </div>
+
+    <div class="wrapper">
+
+        <color-card [type]="red">
+            <h1>u4bi</h1>
+        </color-card>
+
+        <color-card [type]="blue">
+            <h2>u4bi</h2>
+        </color-card>
+        
+        <color-card [type]="green">
+            <h3>u4bi</h3>
+        </color-card>
+        
+        <color-card [type]="black">
+            <h4>u4bi</h4>
+        </color-card>
+
+    </div>
     
-    <u4bi-card [name]="유명재" [age]="13" [level]="85" [exp]="38" [team]="멋진팀" [img]="https://avatars1.githubusercontent.com/u/21367010?v=3&s=460" [url]="https://github.com/u4bi"></u4bi-card>
-    
-    <u4bi-card [name]="유명재" [age]="15" [level]="35" [exp]="78" [team]="나쁜팀" [img]="https://avatars1.githubusercontent.com/u/24691195?v=3&s=200" [url]="https://github.com/u4bi-dev"></u4bi-card>
 
     <script src="./dist/js/customElement.js"></script>
 
