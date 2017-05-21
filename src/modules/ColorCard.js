@@ -2,6 +2,8 @@ export class ColorCard extends HTMLElement {
   constructor() {
 
     super();
+    this.type = this.getAttribute('[type]');
+
     this.shadow = this.attachShadow({mode: 'open'});
 
     this.shadow.innerHTML =`
@@ -40,7 +42,12 @@ export class ColorCard extends HTMLElement {
   init(){
     
     this.content.innerHTML = this.innerHTML;
-    this.content.className = 'color-card-'+this.getAttribute('[type]');
+    this.content.className = 'color-card-'+this.type;
+
+    this.content.addEventListener("click", (e) => {
+        alert(this.type);
+        console.log(e);
+    });
 
     this.shadow.appendChild(this.content);
 
