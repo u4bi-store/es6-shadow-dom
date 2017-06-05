@@ -21,7 +21,6 @@
   "homepage": "https://github.com/u4bi/rollup-build#readme",
   "devDependencies": {
     "rollup": "^0.41.6",
-    "rollup-plugin-scss": "^0.2.0",
     "rollup-plugin-uglify": "^2.0.0",
     "uglify-es": "^3.0.10"
   }

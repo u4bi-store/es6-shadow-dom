@@ -1,13 +1,41 @@
-import '../scss/U4biCard.scss'
-
 export class U4biCard extends HTMLElement {
   constructor() {
 
     super(); /* HTMLElement 상속 */
 
     
-    let 
-        shadow = this.attachShadow({mode: 'open'}); /* 쉐도우 돔 생성 */
+    this.shadow = this.attachShadow({mode: 'open'}); /* 쉐도우 돔 생성 */
+
+    this.shadow.innerHTML =`
+      <style>
+          div {
+            display: inline-block;
+            float: left;
+            margin: 0.5em;
+            border-radius: 3px;
+            background: #FFF;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+            font-family: Helvetica, arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+          }
+
+          .u4bi-card-img{
+            cursor: pointer;
+            background: #FFF;
+            margin : 0.5em;
+          }
+
+          .u4bi-card-content{
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: #08C;
+            border-top: 1px solid #EEE;
+            font-weight: bold;
+            padding: 0.75em 0;
+          }
+      </style>
+    `;
 
     let 
         img = document.createElement('img'); /* 표준 이미지 태그 생성 */
@@ -17,7 +45,7 @@ export class U4biCard extends HTMLElement {
     img.height = 150;
     img.className = 'u4bi-card-img';
 
-    shadow.appendChild(img); /* 이미지를 쉐도우돔내 주입 */
+    this.shadow.appendChild(img); /* 이미지를 쉐도우돔내 주입 */
     
     /* 클릭 이벤트 리스너 이미지내 주입 */
     img.addEventListener('click', () => {
@@ -44,7 +72,7 @@ export class U4biCard extends HTMLElement {
      
     content.className = 'u4bi-card-content';
 
-    shadow.appendChild(content); /* 콘텐츠 디비전을 쉐도우돔내 주입 */
+    this.shadow.appendChild(content); /* 콘텐츠 디비전을 쉐도우돔내 주입 */
 
   }
 
